@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -28,6 +29,7 @@ const Register = () => {
     const handleAccepted = e => {
         setAccepted(e.target.checked)
     }
+    useTitle('Register')
     return (
         <Container className="w-25 mx-auto">
             <h3>Please Register</h3>

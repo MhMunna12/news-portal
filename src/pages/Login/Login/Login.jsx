@@ -3,11 +3,13 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Auth/AuthProvider/AuthProvider';
+import useTitle from './../../../hooks/useTitle';
 
 const Login = () => {
     const { SignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    useTitle('Login')
     let from = location.state?.from?.pathname || "/"
     const handleSignIn = e => {
         e.preventDefault();

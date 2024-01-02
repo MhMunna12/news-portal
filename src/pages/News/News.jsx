@@ -3,9 +3,11 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 import EditorInside from './EditorInside/EditorInside';
+import useTitle from '../../hooks/useTitle';
 
 const News = () => {
     const news = useLoaderData();
+    useTitle('News Detail')
     const { _id, title, details, image_url, category_id } = news;
     return (
         <div>
